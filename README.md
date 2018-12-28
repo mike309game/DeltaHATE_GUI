@@ -1,3 +1,5 @@
+STILL HAVE TO DO THINGS, JUST ALREADY PUT IT HERE SO IT'S EASIER TO MANAGE EVERYTHING AND SDHKBGFSD
+
 # DeltaHATE GUI version
 Yet another Deltarune corruptor! (that can corrupt other GameMaker games too!)
 
