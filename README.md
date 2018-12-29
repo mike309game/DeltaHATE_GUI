@@ -14,7 +14,7 @@ Yet another Deltarune corruptor! (that can corrupt other GameMaker Studio games 
 
 This is basically [this](https://github.com/krzys-h/UndertaleModTool/blob/master/UndertaleModTool/SampleScripts/DeltaHATE.csx) script from [UndertaleModTool](https://github.com/krzys-h/UndertaleModTool/) but portted as an standalone program with options.
 
-The only problem is that it doesn't really have a "power meter" so you'll always get [the max chaos.](https://cdn.discordapp.com/attachments/507353685228126218/528569210679590912/unknown.png) (not enough screenshots sorry)
+The only problem is that it doesn't really have a "power meter" so you'll always get [the](https://cdn.discordapp.com/attachments/507353685228126218/528569210679590912/unknown.png)[max](https://cdn.discordapp.com/attachments/299645962765205515/528632282123337759/unknown.png) [chaos.](https://cdn.discordapp.com/attachments/299645962765205515/528632474582908928/unknown.png)
 
 ##IMPORTANT
 In case you get softlocked in a part of the game even when shuffling the game many times, you'd probably want to use a clean data.win of the game to progress beyond that part.
