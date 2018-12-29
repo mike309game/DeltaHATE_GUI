@@ -18,7 +18,7 @@
         <Label x:Name="label_dataname" Content="&lt; Click to load!" Canvas.Left="90" Canvas.Top="81" Foreground="White"/>
         <Rectangle x:Name="rect" Height="375" Canvas.Left="7" Stroke="White" Canvas.Top="121" Width="486"/>
         <CheckBox x:Name="check_csprites" Content="Shuffle sprites" Canvas.Left="24" Canvas.Top="251" Foreground="White" IsChecked="True"/>
-        <CheckBox x:Name="check_cbackground" Content="Shuffle backgrounds/tilesets&#xA;(Deltarune (and probably Undertale) only)" Canvas.Left="24" Canvas.Top="271" Foreground="White"/>
+        <CheckBox x:Name="check_cbackground" Content="Shuffle backgrounds/tilesets&#xA;(specific for Deltarune only)" Canvas.Left="24" Canvas.Top="271" Foreground="White"/>
         <Label x:Name="label_spriteshuffletype" Content="Sprite shuffle type:" Canvas.Left="24" Canvas.Top="121" Foreground="White"/>
         <Rectangle x:Name="rect_types" Height="55" Canvas.Left="24" Stroke="White" Canvas.Top="152" Width="209"/>
         <RadioButton x:Name="radio_shufflebysprite" Content="Shuffle whole sprites (unstable)" Canvas.Left="38" Canvas.Top="164" Background="White" Foreground="White" IsChecked="True"/>

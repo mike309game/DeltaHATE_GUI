@@ -40,12 +40,6 @@
     <StartupObject>DeltaHATE.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.WindowsAPICodePack">
-      <HintPath>D:\le humble undertale\UndertaleModTool-master-aiwhyf\UndertaleModTool-master\packages\Microsoft-WindowsAPICodePack-Core.1.1.3.3\lib\net452\Microsoft.WindowsAPICodePack.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
-      <HintPath>D:\le humble undertale\UndertaleModTool-master-aiwhyf\UndertaleModTool-master\packages\Microsoft-WindowsAPICodePack-Shell.1.1.3.3\lib\net452\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -58,8 +52,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="UndertaleModLib">
-      <HintPath>D:\le humble undertale\UndertaleModTool-master-aiwhyf\UndertaleModTool-master\UndertaleModLib\bin\Debug\UndertaleModLib.dll</HintPath>
+    <Reference Include="UndertaleModLib, Version=0.1.15.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\utmt 3683fa6\UndertaleModTool\UndertaleModLib\bin\Debug\UndertaleModLib.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />

@@ -7,7 +7,7 @@ using System.Windows;
 using System.IO;
 using System.IO.Pipes;
 using Microsoft.Win32;
-using Microsoft.WindowsAPICodePack.Dialogs;
+//using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -18,7 +18,6 @@ using System.Windows.Navigation;
 using System.Reflection;
 using System.Windows.Shapes;
 using UndertaleModLib;
-using UndertaleModLib.DebugData;
 using UndertaleModLib.Decompiler;
 using UndertaleModLib.Models;
 
@@ -66,7 +65,7 @@ namespace DeltaHATE
         private void SetStatics()
         {
             Values.DoSprite = (bool)check_csprites.IsChecked;
-            Values.DoText = (bool)check_cfnts.IsChecked;
+            Values.DoText = (bool)check_cstrs.IsChecked;
             Values.DoSound = (bool)check_csnds.IsChecked;
             Values.DoFont = (bool)check_cfnts.IsChecked;
             Values.DoBackground = (bool)check_cbackground.IsChecked;
@@ -417,7 +416,7 @@ namespace DeltaHATE
                             }*/
 							
 							//ehhhhhhhhhhh
-							if (sprite.Name.Content.StartsWith("bg_"))
+							if (sprite.Name.Content.StartsWith("bg_") || sprite.Name.Content.Contains("tiles"))
                             {
                                 continue;
                             }
@@ -489,10 +488,6 @@ namespace DeltaHATE
                             if (sprite.Name.Content.Contains("tiles"))
                             {
                                 tWhichs.Add(i);
-                            }
-                            else
-                            {
-                                continue;
                             }
                         }
                         //Whichs.SelectSome(MyRng);
