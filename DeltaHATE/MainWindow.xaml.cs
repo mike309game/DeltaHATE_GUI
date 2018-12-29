@@ -522,7 +522,7 @@ namespace DeltaHATE
                 }
                 //Whichs.SelectSome(MyRng);
                 Data.Fonts.ShuffleOnlySelected(Whichs, MyRng);
-            }//a
+            }//aa
 
             if (DoStrs)
             {
