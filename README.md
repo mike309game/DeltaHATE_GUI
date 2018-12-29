@@ -19,7 +19,7 @@ The only problem is that it doesn't really have a "power meter" so you'll always
 ##IMPORTANT
 In case you get softlocked in a part of the game even when shuffling the game many times, you'd probably want to use a clean data.win of the game to progress beyond that part.
 
-(and I'd really appreciate if you contacted me on [Discord](discord.gg/npBTeGu) and reported the softlock to me and I'll see what I can do.)
+(and I'd really appreciate if you contacted me on [Discord](https://discord.gg/npBTeGu) and reported the softlock to me and I'll see what I can do.)
 
 ## TODO (there's some more in the TODO.txt file in the release)
 
