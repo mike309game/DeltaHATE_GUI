@@ -370,10 +370,10 @@ namespace DeltaHATE
                         }
                         foreach (var tex in sprite.Textures)
                         {
-                            List<UndertaleTexturePageItem> SpriteSome = SpriteList;
+                            //List<UndertaleTexturePageItem> SpriteSome = SpriteList;
                             //SpriteSome.SelectSomeTPI(MyRng);
-                            int r = MyRng.Next(SpriteSome.Count);
-                            tex.Texture = SpriteSome[r];
+                            int r = MyRng.Next(SpriteList.Count);
+                            tex.Texture = SpriteList[r];
                         }
                     }
                 }
@@ -386,10 +386,28 @@ namespace DeltaHATE
                         var sprite = Data.Sprites[i];
                         if (DeltaGame)
                         {
-                            if (sprite.Name.Content.StartsWith("spr_kris"))
-                            {
-                                continue;
-                            }
+							if (!Values.DoKris) {
+								if (sprite.Name.Content.StartsWith("spr_kris"))
+								{
+									continue;
+								}
+							}
+							
+							if (!Values.SuseiChalkScene)
+							{
+								if (sprite.Name.Content.Contains("spr_susie_eatchalk"))
+								{
+									continue;
+								}
+							}
+							
+							if (!Values.SantaLancer)
+							{
+								/*if (sprite.Name.Content.Contains("spr_kris"))
+								{
+									continue;
+								}*/
+							}
                             /*if (!DoBGs)
                             {
                                 if (sprite.Name.Content.StartsWith("bg_"))
@@ -397,7 +415,9 @@ namespace DeltaHATE
                                     continue;
                                 }
                             }*/
-                            if (sprite.Name.Content.StartsWith("bg_"))
+							
+							//ehhhhhhhhhhh
+							if (sprite.Name.Content.StartsWith("bg_"))
                             {
                                 continue;
                             }
@@ -432,10 +452,10 @@ namespace DeltaHATE
                             }
                             foreach (var tex in sprite.Textures)
                             {
-                                List<UndertaleTexturePageItem> SpriteSome = BGTList;
+                                //List<UndertaleTexturePageItem> SpriteSome = BGTList;
                                 //SpriteSome.SelectSomeTPI(MyRng);
-                                int r = MyRng.Next(SpriteSome.Count);
-                                tex.Texture = SpriteSome[r];
+                                int r = MyRng.Next(BGTList.Count);
+                                tex.Texture = BGTList[r];
                             }
                         }
 
@@ -447,22 +467,28 @@ namespace DeltaHATE
                             }
                             foreach (var tex in sprite.Textures)
                             {
-                                List<UndertaleTexturePageItem> SpriteSome = TileList;
+                                //List<UndertaleTexturePageItem> SpriteSome = TileList;
                                 //SpriteSome.SelectSomeTPI(MyRng);
-                                int r = MyRng.Next(SpriteSome.Count);
-                                tex.Texture = SpriteSome[r];
+                                int r = MyRng.Next(TileList.Count);
+                                tex.Texture = TileList[r];
                             }
                         }
                     }
                     else
                     {
                         List<int> Whichs = new List<int>();
+                        List<int> tWhichs = new List<int>();
                         for (int i = 0; i < Data.Sprites.Count; i++)
                         {
                             var sprite = Data.Sprites[i];
                             if (sprite.Name.Content.StartsWith("bg_"))
                             {
                                 Whichs.Add(i);
+                            }
+
+                            if (sprite.Name.Content.Contains("tiles"))
+                            {
+                                tWhichs.Add(i);
                             }
                             else
                             {
@@ -471,6 +497,7 @@ namespace DeltaHATE
                         }
                         //Whichs.SelectSome(MyRng);
                         Data.Sprites.ShuffleOnlySelected(Whichs, MyRng);
+                        Data.Sprites.ShuffleOnlySelected(tWhichs, MyRng);
                     }
                 }
             }
@@ -495,7 +522,7 @@ namespace DeltaHATE
                 }
                 //Whichs.SelectSome(MyRng);
                 Data.Fonts.ShuffleOnlySelected(Whichs, MyRng);
-            }
+            }//a
 
             if (DoStrs)
             {
