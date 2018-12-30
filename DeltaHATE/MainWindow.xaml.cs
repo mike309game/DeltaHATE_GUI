@@ -158,28 +158,34 @@ namespace DeltaHATE
         {
             if (Data == null || Data.UnsupportedBytecodeVersion) { return; }
             SetStatics();
-            await DoCorrupt.DoThing(Data, Values.DoSprite, Values.DoBackground, Values.DoSound, Values.DoText, Values.DoFont, Values.SpriteType, FilePath, rng, IsDelta());
-            MessageBox.Show("Corrupted succesfully! Probably!", "Egg?!?!?!?!??!", MessageBoxButton.OK, MessageBoxImage.None);
-            LoadDlg dialogue = new LoadDlg{Owner = this};
-            Task t = Task.Run(() =>
+            LoadDlg dialogue = null;
+            Task t = null;
+            bool thingy = await DoCorrupt.DoThing(Data, Values.DoSprite, Values.DoBackground, Values.DoSound, Values.DoText, Values.DoFont, Values.SpriteType, FilePath, rng, IsDelta());
+
+            if (thingy)
             {
-                //OldData = Data;
-                //MessageBox.Show("Data old set", "", MessageBoxButton.OK, MessageBoxImage.None);
-                using (var stream = new FileStream(filename, FileMode.Create))
-                {
-                    UndertaleIO.Write(stream, Data);
-                }
+                MessageBox.Show("Corrupted succesfully! Probably!", "Egg?!?!?!?!??!", MessageBoxButton.OK, MessageBoxImage.None);
+                dialogue = new LoadDlg { Owner = this };
 
-                Dispatcher.Invoke(() =>
+                t = Task.Run(() =>
                 {
-                    dialogue.Close();
-                    //Data = OldData;
-                    //MessageBox.Show("New data set", "", MessageBoxButton.OK, MessageBoxImage.None);
+                    //OldData = Data;
+                    //MessageBox.Show("Data old set", "", MessageBoxButton.OK, MessageBoxImage.None);
+                    using (var stream = new FileStream(filename, FileMode.Create))
+                    {
+                        UndertaleIO.Write(stream, Data);
+                    }
+
+                    Dispatcher.Invoke(() =>
+                    {
+                        dialogue.Close();
+                        //Data = OldData;
+                        //MessageBox.Show("New data set", "", MessageBoxButton.OK, MessageBoxImage.None);
+                    });
                 });
-            });
-
-            dialogue.ShowDialog();
-            await t;
+                dialogue.ShowDialog();
+                await t;
+            }
         }
         #endregion
 
@@ -303,7 +309,7 @@ namespace DeltaHATE
                 list.RemoveAt(MyRng.Next(list.Count));
         }
 
-        public static async Task DoThing(UndertaleData Data, bool DoSprs, bool DoBGs, bool DoSnds, bool DoStrs, bool DoFnts, bool CorrupType, string FilePath, Random MyRng, bool DeltaGame)
+        public static async Task<bool> DoThing(UndertaleData Data, bool DoSprs, bool DoBGs, bool DoSnds, bool DoStrs, bool DoFnts, bool CorrupType, string FilePath, Random MyRng, bool DeltaGame)
         {
             //set sprites to shuffle without backgrounds
             //nevermind i cant do that
@@ -615,6 +621,8 @@ namespace DeltaHATE
                     Data.Strings.ShuffleOnlySelected(other_lines, StringSwap, MyRng);
                 }
             }
+
+            return true;
         }
     }
 }
