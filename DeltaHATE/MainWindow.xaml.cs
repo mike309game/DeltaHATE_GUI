@@ -242,6 +242,12 @@ namespace DeltaHATE
             NewOptions newopt = new NewOptions { Owner = this };
             newopt.ShowDialog();
         }
+
+        private void Bt_exc_Click(object sender, RoutedEventArgs e)
+        {
+            CustomException window = new CustomException { Owner = this };
+            window.ShowDialog();
+        }
     }
 
     public static class DoCorrupt

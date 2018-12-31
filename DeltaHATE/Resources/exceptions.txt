@@ -1,0 +1,2 @@
+﻿spr_kris;0;0
+spr_susie_eatchalk;2;0

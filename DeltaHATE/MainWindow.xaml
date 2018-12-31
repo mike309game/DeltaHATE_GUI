@@ -66,5 +66,6 @@
         <Rectangle Height="94" Canvas.Left="7" Stroke="White" Canvas.Top="121" Width="230"/>
         <Label Content="empty space aaaaaaaa" Canvas.Left="273" Canvas.Top="146" Background="#0B000000" Foreground="White" Height="94" Width="200" FontSize="22" FontFamily="Junegull"/>
         <Button x:Name="ops" Content="Extra options" Width="75" Canvas.Left="284" Canvas.Top="200" Click="ops_Click"/>
+        <Button x:Name="bt_exc" Content="Exceptions" Canvas.Left="384" Canvas.Top="200" Width="75" Click="Bt_exc_Click"/>
     </Canvas>
 </Window>
