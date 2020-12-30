@@ -1,3 +1,5 @@
+warning: THIS CODE SUCKS
+
 Releases are here:
 
 https://github.com/mike309game/DeltaHATE_GUI/releases
